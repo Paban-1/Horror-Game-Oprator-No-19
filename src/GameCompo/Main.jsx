@@ -1,40 +1,34 @@
-import React, { useState, useEffect, useRef } from "react";
-import { StoryData } from "../Constents";
-import GamePlay from "./GamePlay";
+import React from "react";
+import Player from "../Player/Player";
+import Coin from "./Coin";
 
 const Main = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [gameStart, setGameStart] = useState(false);
-
-  useEffect(() => {
-    const currentItems = StoryData[currentIndex];
-
-    if (currentIndex < StoryData.length) {
-      const audio = new Audio(currentItems.audio);
-      audio.play();
-
-      const handleIndex = () => {
-        setCurrentIndex((prev) => prev + 1);
-      };
-
-      audio.addEventListener("ended", handleIndex);
-
-      return () => {
-        audio.removeEventListener("ended", handleIndex);
-      };
-    } else {
-      setGameStart(true);
-    }
-  }, [currentIndex]);
-
   return (
-    <div className="flex justify-center items-center h-full w-full relative">
-      {currentIndex < StoryData.length && (
-        <p> {StoryData[currentIndex].data}</p>
-      )}
+    <section className="h-screen w-full border overflow-hidden flex flex-col justify-between bg-gray-500 select-none relative overflow-hidden">
+      <Coin />
+      <Player />
 
-      {gameStart && <GamePlay />}
-    </div>
+      <div className="flex justify-between">
+        <div className="border p-8 h-40 w-40 bg-green-500">House 1</div>
+        <div className="border p-8 h-60 w-40">House 2</div>
+        <div className="border p-8 h-40 w-80">House 3</div>
+        <div className="border p-8 h-60 w-40"> house 4</div>
+      </div>
+
+      <div className="flex justify-between">
+        <div className="border p-8 h-40 w-40"></div>
+        <div className="border p-8 h-40 w-40"></div>
+        <div className="border p-8 h-40 w-40"></div>
+        <div className="border p-8 h-40 w-80"></div>
+      </div>
+
+      <div className="flex justify-between">
+        <div className="border p-8 h-40 w-40"></div>
+        <div className="border p-8 h-40 w-40"></div>
+        <div className="border p-8 h-40 w-40"></div>
+        <div className="border p-8 h-40 w-40"></div>
+      </div>
+    </section>
   );
 };
 

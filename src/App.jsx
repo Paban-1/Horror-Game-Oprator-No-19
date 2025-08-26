@@ -1,6 +1,5 @@
 import React from "react";
 import Screen from "./mainCompo/Screen";
-import GamePlay from "./GameCompo/GamePlay";
 
 const App = () => {
   return (
