@@ -1,34 +1,30 @@
-import React from "react";
-import Player from "../Player/Player";
-import Coin from "./Coin";
+import React, { useEffect, useState } from "react";
+import { StoryData } from "../Constents/index.js";
+import GamePlay from "../GamePlay/GamePlay.jsx";
+
 
 const Main = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < StoryData.length) {
+      const timer = setTimeout(() => {
+        setCurrentIndex((prev) => prev + 1);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex]);
+
   return (
-    <section className="h-screen w-full border overflow-hidden flex flex-col justify-between bg-gray-500 select-none relative overflow-hidden">
-      <Coin />
-      <Player />
-
-      <div className="flex justify-between">
-        <div className="border p-8 h-40 w-40 bg-green-500">House 1</div>
-        <div className="border p-8 h-60 w-40">House 2</div>
-        <div className="border p-8 h-40 w-80">House 3</div>
-        <div className="border p-8 h-60 w-40"> house 4</div>
-      </div>
-
-      <div className="flex justify-between">
-        <div className="border p-8 h-40 w-40"></div>
-        <div className="border p-8 h-40 w-40"></div>
-        <div className="border p-8 h-40 w-40"></div>
-        <div className="border p-8 h-40 w-80"></div>
-      </div>
-
-      <div className="flex justify-between">
-        <div className="border p-8 h-40 w-40"></div>
-        <div className="border p-8 h-40 w-40"></div>
-        <div className="border p-8 h-40 w-40"></div>
-        <div className="border p-8 h-40 w-40"></div>
-      </div>
-    </section>
+    <div className="flex justify-center items-center bg-red-500 h-screen w-full">
+      {currentIndex < StoryData.length ? (
+        <p>{StoryData[currentIndex].data}</p>
+      ) : (
+        <div className="h-screen w-full bg-black">
+          <GamePlay />
+        </div>
+      )}
+    </div>
   );
 };
 
