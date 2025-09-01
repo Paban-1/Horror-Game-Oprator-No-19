@@ -1,14 +1,14 @@
 import React, { useState } from "react";
+import InterFace from "../GameCompo/InterFace";
 import Main from "../GameCompo/Main";
-import Player from "../Player/Player";
 
 const Screen = () => {
+  const [ShowCompo, setShowCompo] = useState(false);
+
   return (
-    <div className="fixed h-screen w-screen overflow-hidden inset-0 bg-blue-500">
-      <Main />
-      {/* <Player/> */}
+    <div className="fixed h-screen w-screen overflow-hidden inset-0">
+      {ShowCompo ? <Main /> : <InterFace onStart={() => setShowCompo(true)} />}
     </div>
   );
 };
-
 export default Screen;
