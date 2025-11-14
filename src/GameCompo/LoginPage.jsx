@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Play from "./Play";
+import Gude from "./Gude";
 
 const LoginPage = () => {
   const [code, setCode] = useState("");
   const [pass, setPass] = useState("");
   const [isPlayActive, setIsPlayActive] = useState(false);
   const [elseMassege, setElseMassege] = useState("");
+  const [gudeOpen, setGudeOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +18,14 @@ const LoginPage = () => {
       setElseMassege("*Invalid login");
     }
   };
+
+  function handleGude(){
+    const timer = setTimeout(() => {
+      setGudeOpen(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  };
+  handleGude()
 
   return (
     <section className="bg-black text-black rounded-md h-screen w-full select-none">
@@ -48,12 +58,16 @@ const LoginPage = () => {
           >
             Login
           </button>
+          
           <div className="mt-4 text-red-600 font-spacel">
+          
             <p>{elseMassege}</p>
           </div>
         </form>
         {isPlayActive && <Play />}
       </div>
+      {<Gude />
+    }    
     </section>
   );
 };

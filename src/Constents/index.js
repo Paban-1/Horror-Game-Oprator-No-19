@@ -1,9 +1,33 @@
+// Import Game Pages Components & export
+import MenuPage from "../GamePages/MenuPage";
+
+export { MenuPage };
+
+// Import Game Components & export
+import Introducted from "../GameCompo/Introducted";
+import IntroductedStory from "../GameCompo/IntroductedStory";
+
+export { Introducted, IntroductedStory };
+
+// Import Game Play components & export
+import GamePlay from "../GamePlay/GamePlay";
+
+export { GamePlay };
+
 import img from "../../public/MenuImg.jpg";
 export const MenuImg = img;
 
-//First Script
-export  const StoryData = [
-  { id: 1, data: "1 I'm ken," },
+// IntroDucted Dilogs
+export const introduc = [
+  { id: 1, dilog: "i try my best to save her but ..." },
+  { id: 2, dilog: "but.." },
+  { id: 3, dilog: "*hummm" },
+  { id: 3, dilog: "it's my fault" },
+];
+
+// First Script
+export const StoryData = [
+  { id: 1, data: "i try my best to save her but ..." },
   {
     id: 2,
     data: "2 It's been severel months i work as a 911 Oprator",
@@ -13,9 +37,44 @@ export  const StoryData = [
   { id: 5, data: "5 This is my story" },
 ];
 
-export const queryss = [
-  
+// IntroductedStory Dilogs
+export const IntroductedStoryDilogs = [
+  {
+    id: 1,
+    dilog:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, incidunt dolorum suscipit beatae quidem fugiat corrupti blanditiis. Impedit suscipit natus qui, fuga ullam rerum sequi non vitae quis delectus architecto.",
+  },
+  {
+    id: 2,
+    dilog:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, incidunt dolorum suscipit beatae.",
+  },
 ];
+
+// First day calls
+export const FirstDay = [
+  // First Caller Dilogs
+  { id: 1, dilog: "Hey! i'm nethan" },
+  {
+    id: 2,
+    dilog: "i just end my 12 hours shift and umm i accualy can't sleep",
+  },
+  {
+    id: 3,
+    dilog:
+      "my naibor, his dog is barking all the night,i conformt him but he don't get any action",
+  },
+  { id: 4, dilog: "This is anoing, you know ?" },
+  { id: 5, dilog: "Could you plese help me ?" },
+
+  // Oprator Dilogs
+  { id: 6, opraDilog: "Sir i can understand your problem", route:"" },
+  { id: 7, opraDilog: "Sorry Sir i can't help" },
+  { id: 8, opraDilog: "Kill the dog" },
+  { id: 9, opraDilog: "Get sleeping pill" },
+];
+
+export const queryss = [];
 
 //ANIMATION
 export const HeadingVariants = {

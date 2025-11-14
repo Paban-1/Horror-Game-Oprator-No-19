@@ -1,13 +1,12 @@
-import React from "react";
-import Screen from "./mainCompo/Screen";
+import React from 'react'
+import {Outlet} from "react-router-dom" 
 
 const App = () => {
   return (
-    <main className="W-full h-screen overflow-hidden">
-      <Screen />
-      {/* <GamePlay /> */}
-    </main>
-  );
-};
+    <div>
+      <Outlet/>
+    </div>
+  )
+}
 
-export default App;
+export default App

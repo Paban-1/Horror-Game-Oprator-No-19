@@ -6,4 +6,4 @@ const Play = () => {
   )
 }
 
-export default Play
+export default Play;

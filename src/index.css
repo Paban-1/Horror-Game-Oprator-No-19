@@ -6,15 +6,8 @@
 
 :root {
     /* font-family: sans-serif; */
-    background: black;
-    color: white;
+    /* background: black; */
+    /* color: white; */
     scroll-behavior: smooth;
-    font-family:fantasy;
-}
-.bg-image{
-    background-image: url("./assets/jason-root.webp");
-}
-
-#work, #about, #experience, #testimonials, #contact{
-scroll-margin-top: 80px;    
+    /* font-family:fantasy; */
 }
